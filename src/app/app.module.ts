@@ -9,7 +9,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { UserFormComponent } from './user-form/user-form.component'
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http'
     HeaderComponent,
     LayoutComponent,
     ViewUserComponent,
+    UserFormComponent,
   ],
   imports: [
     ReactiveFormsModule,

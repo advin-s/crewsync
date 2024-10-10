@@ -5,6 +5,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { ListingComponent } from './listing/listing.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { authGuard } from './auth/auth.guard';
+import { UserFormComponent } from './user-form/user-form.component';
 
 const routes: Routes = [
     {
@@ -23,6 +24,14 @@ const routes: Routes = [
         {
           path:'view/:id',
           component:ViewUserComponent
+        },
+        {
+          path:'edit/:id',
+          component:UserFormComponent
+        },
+        {
+          path:'add-user',
+          component:UserFormComponent
         }
       ]
     }

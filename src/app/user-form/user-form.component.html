@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+        <form class="p-3 border border-secondary-subtle rounded-2" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <h5>Add user</h5>
+            <div class="mb-3">
+                <small>
+                    Name
+                </small>
+                <input type="text" class="form-control shadow-none" formControlName="name">
+                <small *ngIf="userForm.controls['name'].touched && !userForm.controls['name'].valid"
+                    class="text-danger">Please enter a valid name</small>
+            </div>
+            <div class="mb-3">
+                <small>
+                    Username
+                </small>
+                <input type="text" class="form-control shadow-none" formControlName="username">
+                <small *ngIf="userForm.controls['username'].touched && !userForm.controls['username'].valid"
+                    class="text-danger">Please enter a
+                    valid username</small>
+                <small *ngIf="userForm.controls['username'].hasError('minlength')" class="text-warning d-block">Username should be more than 5 characters</small>
+
+            </div>
+            <div class="mb-3">
+                <small>
+                    Phone
+                </small>
+                <input type="text" class="form-control shadow-none" formControlName="phone">
+                <small *ngIf="userForm.controls['phone'].touched && !userForm.controls['phone'].valid"
+                    class="text-danger">Please
+                    enter a
+                    valid phone number</small>
+                <small *ngIf="userForm.controls['phone'].hasError('maxlength') || userForm.controls['phone'].hasError('minlength')" class="text-warning d-block">Phone number should be 10 digits</small>
+            </div>
+            <div class="mb-3">
+                <small>
+                    Email
+                </small>
+                <input type="email" class="form-control shadow-none" formControlName="email">
+                <small *ngIf="userForm.controls['email'].touched && !userForm.controls['email'].valid"
+                    class="text-danger">Please
+                    enter a
+                    valid email</small>
+            </div>
+            <button class="btn btn-outline-warning mb-3 ms-auto d-block">Add skills</button>
+            <button class="btn btn-outline-success w-100" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
